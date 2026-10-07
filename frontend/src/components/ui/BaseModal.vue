@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
           <button
             type="button"
             class="absolute top-4 right-4 grid h-10 w-10 place-items-center rounded-full text-muted transition hover:bg-navy-50 hover:text-navy-700"
-            aria-label="Yopish"
+            aria-label="Ёпиш"
             @click="emit('close')"
           >
             <AppIcon name="x" :size="20" />

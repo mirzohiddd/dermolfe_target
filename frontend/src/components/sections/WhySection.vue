@@ -7,7 +7,7 @@ import { advantages } from '@/data/content'
 <template>
   <section id="afzalliklar" class="section">
     <div class="container-page">
-      <SectionHeading eyebrow="Nega Dermolife?" title="Ishonch bilan tanlash uchun 6 ta sabab" />
+      <SectionHeading eyebrow="Нега Dermolife?" title="Ишонч билан танлаш учун 6 та сабаб" />
 
       <div class="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-12">
         <div v-for="(a, i) in advantages" :key="a.title" v-reveal="(i % 3) * 80" class="flex gap-4">

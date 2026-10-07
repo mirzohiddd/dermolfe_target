@@ -52,16 +52,16 @@ const fmtDate = (iso) =>
 
 export function leadMessage(lead) {
   const lines = [
-    `🆕 <b>Yangi ariza #${lead.id}</b>`,
+    `🆕 <b>Янги ариза #${lead.id}</b>`,
     '',
-    `👤 <b>Ism:</b> ${esc(lead.name)}`,
-    `📞 <b>Telefon:</b> <a href="tel:${lead.phone}">${fmtPhone(lead.phone)}</a>`,
-    `🩺 <b>Muammo:</b> ${esc(lead.problemLabel)}`,
-    `🕒 <b>Vaqt:</b> ${fmtDate(lead.createdAt)}`,
+    `👤 <b>Исм:</b> ${esc(lead.name)}`,
+    `📞 <b>Телефон:</b> <a href="tel:${lead.phone}">${fmtPhone(lead.phone)}</a>`,
+    `🩺 <b>Муаммо:</b> ${esc(lead.problemLabel)}`,
+    `🕒 <b>Вақт:</b> ${fmtDate(lead.createdAt)}`,
   ]
   const utm = Object.entries(lead.utm || {})
   if (utm.length) {
-    lines.push('', '📊 <b>Manba:</b>')
+    lines.push('', '📊 <b>Манба:</b>')
     for (const [k, v] of utm) lines.push(`• ${esc(k)}: <code>${esc(v)}</code>`)
   }
   return lines.join('\n')
@@ -75,7 +75,7 @@ export async function deliverLead(lead) {
     return 'sent'
   } catch (err) {
     console.error('[telegram] guruhga yuborilmadi:', err.message)
-    const warn = `⚠️ Ariza guruhga yuborilmadi: <code>${esc(err.message)}</code>\n\n${text}`
+    const warn = `⚠️ Ариза гуруҳга юборилмади: <code>${esc(err.message)}</code>\n\n${text}`
     for (const admin of config.adminIds) {
       await sendMessage(admin, warn).catch((e) => console.error('[telegram] adminga ham yuborilmadi:', e.message))
     }
@@ -96,15 +96,15 @@ function stats() {
   for (const l of leads) byProblem[l.problemLabel] = (byProblem[l.problemLabel] || 0) + 1
 
   const lines = [
-    '📈 <b>Statistika</b>',
+    '📈 <b>Статистика</b>',
     '',
-    `Bugun: <b>${leads.filter((l) => dayKey(l.createdAt) === today).length}</b>`,
-    `Oxirgi 7 kun: <b>${leads.filter((l) => Date.parse(l.createdAt) > weekAgo).length}</b>`,
-    `Jami: <b>${leads.length}</b>`,
+    `Бугун: <b>${leads.filter((l) => dayKey(l.createdAt) === today).length}</b>`,
+    `Охирги 7 кун: <b>${leads.filter((l) => Date.parse(l.createdAt) > weekAgo).length}</b>`,
+    `Жами: <b>${leads.length}</b>`,
   ]
   const top = Object.entries(byProblem).sort((a, b) => b[1] - a[1])
   if (top.length) {
-    lines.push('', '<b>Muammolar bo‘yicha:</b>')
+    lines.push('', '<b>Муаммолар бўйича:</b>')
     for (const [k, v] of top) lines.push(`• ${esc(k)} — ${v}`)
   }
   return lines.join('\n')
@@ -112,9 +112,9 @@ function stats() {
 
 function lastLeads() {
   const items = allLeads().slice(-10).reverse()
-  if (!items.length) return 'Hozircha arizalar yo‘q.'
+  if (!items.length) return 'Ҳозирча аризалар йўқ.'
   return [
-    '🗂 <b>Oxirgi arizalar</b>',
+    '🗂 <b>Охирги аризалар</b>',
     '',
     ...items.map((l) => `#${l.id} · ${esc(l.name)} · ${fmtPhone(l.phone)} · ${esc(l.problemLabel)} · ${fmtDate(l.createdAt)}`),
   ].join('\n')
@@ -122,7 +122,7 @@ function lastLeads() {
 
 function toCsv() {
   const cell = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`
-  const head = ['ID', 'Ism', 'Telefon', 'Muammo', 'Sana', 'utm_source', 'utm_campaign', 'utm_content', 'Telegram']
+  const head = ['ID', 'Исм', 'Телефон', 'Муаммо', 'Сана', 'utm_source', 'utm_campaign', 'utm_content', 'Telegram']
   const rows = allLeads().map((l) =>
     [l.id, l.name, l.phone, l.problemLabel, fmtDate(l.createdAt), l.utm?.utm_source, l.utm?.utm_campaign, l.utm?.utm_content, l.telegram]
       .map(cell)
@@ -134,7 +134,7 @@ function toCsv() {
 async function sendCsv(chatId) {
   const form = new FormData()
   form.append('chat_id', String(chatId))
-  form.append('caption', `Jami arizalar: ${allLeads().length}`)
+  form.append('caption', `Жами аризалар: ${allLeads().length}`)
   const name = `dermolife-arizalar-${new Date().toISOString().slice(0, 10)}.csv`
   form.append('document', new Blob([toCsv()], { type: 'text/csv' }), name)
   const res = await fetch(api('sendDocument'), { method: 'POST', body: form, signal: AbortSignal.timeout(30000) })
@@ -154,13 +154,13 @@ async function handleMessage(msg) {
       return sendMessage(
         chatId,
         admin
-          ? '👋 <b>Dermolife arizalar boti</b>\n\nSaytdagi barcha arizalar avtomatik guruhga yuboriladi.\n\n/stats — statistika\n/last — oxirgi 10 ta ariza\n/export — barcha arizalar (CSV)\n/id — chat ID'
-          : 'Assalomu alaykum! Bu bot Dermolife saytidagi arizalarni qabul qiladi.',
+          ? '👋 <b>Dermolife аризалар боти</b>\n\nСайтдаги барча аризалар автоматик гуруҳга юборилади.\n\n/stats — статистика\n/last — охирги 10 та ариза\n/export — барча аризалар (CSV)\n/id — чат ID'
+          : 'Ассалому алайкум! Бу бот Dermolife сайтидаги аризаларни қабул қилади.',
       )
     case '/id':
       return sendMessage(
         chatId,
-        `Chat ID: <code>${chatId}</code>\nSizning ID: <code>${msg.from?.id ?? '-'}</code>`,
+        `Чат ID: <code>${chatId}</code>\nСизнинг ID: <code>${msg.from?.id ?? '-'}</code>`,
       )
     case '/stats':
       return admin && sendMessage(chatId, stats())
@@ -182,9 +182,9 @@ export async function startPolling() {
     console.log(`[telegram] bot ishga tushdi: @${me.username}`)
     await call('setMyCommands', {
       commands: [
-        { command: 'stats', description: 'Statistika' },
-        { command: 'last', description: 'Oxirgi 10 ta ariza' },
-        { command: 'export', description: 'Arizalar (CSV)' },
+        { command: 'stats', description: 'Статистика' },
+        { command: 'last', description: 'Охирги 10 та ариза' },
+        { command: 'export', description: 'Аризалар (CSV)' },
         { command: 'id', description: 'Chat ID' },
       ],
     }).catch(() => {})

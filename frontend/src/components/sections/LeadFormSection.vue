@@ -17,22 +17,22 @@ const successOpen = ref(false)
 const submittedName = ref('')
 
 const benefits = [
-  'Mutaxassis siz bilan tez orada bog‘lanadi',
-  'Muammongiz bo‘yicha shaxsiy tavsiya',
-  'Kompleksni to‘g‘ri qo‘llash tartibi',
+  'Малакали мутахассис сиз билан тез орада боғланади',
+  'Муаммонгиз бўйича шахсий тавсия',
+  'Комплексни тўғри қўллаш тартиби',
 ]
 
 /* ---------- validation ---------- */
 const validators = {
   name(v) {
     const val = v.trim()
-    if (!val) return 'Ismingizni kiriting'
-    if (val.length < 2) return 'Ism kamida 2 ta harfdan iborat bo‘lsin'
-    if (!/^[\p{L}\s'‘’ʻʼ`-]+$/u.test(val)) return 'Ismda faqat harflar bo‘lishi mumkin'
+    if (!val) return 'Исмингизни киритинг'
+    if (val.length < 2) return 'Исм камида 2 та ҳарфдан иборат бўлсин'
+    if (!/^[\p{L}\s'‘’ʻʼ`-]+$/u.test(val)) return 'Исмда фақат ҳарфлар бўлиши мумкин'
     return ''
   },
   problem(v) {
-    return v ? '' : 'Muammoni tanlang'
+    return v ? '' : 'Муаммони танланг'
   },
   phone(v) {
     return validatePhone(v)
@@ -96,7 +96,7 @@ async function onSubmit() {
     Object.assign(errors, { name: '', problem: '', phone: '' })
     touched.value = false
   } catch (err) {
-    submitError.value = err instanceof LeadError ? err.message : 'Kutilmagan xatolik. Iltimos, qayta urinib ko‘ring.'
+    submitError.value = err instanceof LeadError ? err.message : 'Кутилмаган хатолик. Илтимос, қайта уриниб кўринг.'
   } finally {
     loading.value = false
   }
@@ -123,12 +123,12 @@ const inputClass = (field) =>
         <!-- chap: matn -->
         <div class="relative overflow-hidden p-7 text-white sm:p-10 lg:p-12">
           <div aria-hidden="true" class="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-leaf-600/25 blur-3xl" />
-          <p class="text-xs font-bold tracking-[0.16em] text-leaf-400 uppercase">Konsultatsiya</p>
+          <p class="text-xs font-bold tracking-[0.16em] text-leaf-400 uppercase">Консультация</p>
           <h2 class="mt-3 text-[28px] leading-[1.15] font-extrabold tracking-[-0.025em] text-balance sm:text-4xl">
-            Mutaxassisdan konsultatsiya oling
+            Малакали мутахассисдан консультация олинг
           </h2>
           <p class="mt-4 leading-relaxed text-navy-100 sm:text-lg">
-            Ma’lumotlaringizni qoldiring — mutaxassisimiz qo‘ng‘iroq qilib, muammongiz bo‘yicha maslahat beradi.
+            Маълумотларингизни қолдиринг — малакали мутахассисимиз қўнғироқ қилиб, муаммонгиз бўйича маслаҳат беради.
           </p>
           <ul class="relative mt-7 space-y-3.5">
             <li v-for="b in benefits" :key="b" class="flex items-center gap-3 font-semibold">
@@ -150,16 +150,16 @@ const inputClass = (field) =>
 
         <!-- o'ng: forma -->
         <div class="bg-white p-6 sm:p-10 lg:p-12">
-          <form novalidate class="space-y-5" aria-label="Konsultatsiya uchun ariza" @submit.prevent="onSubmit">
+          <form novalidate class="space-y-5" aria-label="Консультация учун ариза" @submit.prevent="onSubmit">
             <div>
-              <label for="lead-name" class="mb-2 block text-sm font-bold text-navy-800">Ism</label>
+              <label for="lead-name" class="mb-2 block text-sm font-bold text-navy-800">Исм</label>
               <input
                 id="lead-name"
                 v-model="form.name"
                 type="text"
                 name="name"
                 autocomplete="given-name"
-                placeholder="Ismingiz"
+                placeholder="Исмингиз"
                 maxlength="60"
                 :class="inputClass('name')"
                 :aria-invalid="!!errors.name"
@@ -173,7 +173,7 @@ const inputClass = (field) =>
             </div>
 
             <div>
-              <label for="lead-problem" class="mb-2 block text-sm font-bold text-navy-800">Muammo</label>
+              <label for="lead-problem" class="mb-2 block text-sm font-bold text-navy-800">Муаммо</label>
               <div class="relative">
                 <select
                   id="lead-problem"
@@ -185,7 +185,7 @@ const inputClass = (field) =>
                   @change="validateField('problem')"
                   @blur="onBlur('problem')"
                 >
-                  <option value="" disabled>Muammoni tanlang</option>
+                  <option value="" disabled>Муаммони танланг</option>
                   <option v-for="o in problemOptions" :key="o.value" :value="o.value" class="text-navy-900">
                     {{ o.label }}
                   </option>
@@ -202,7 +202,7 @@ const inputClass = (field) =>
             </div>
 
             <div>
-              <label for="lead-phone" class="mb-2 block text-sm font-bold text-navy-800">Telefon raqam</label>
+              <label for="lead-phone" class="mb-2 block text-sm font-bold text-navy-800">Телефон рақам</label>
               <input
                 id="lead-phone"
                 :value="form.phone"
@@ -246,12 +246,12 @@ const inputClass = (field) =>
             </p>
 
             <BaseButton type="submit" size="xl" block :loading="loading">
-              {{ loading ? 'Yuborilmoqda…' : 'Konsultatsiya olish' }}
+              {{ loading ? 'Юборилмоқда…' : 'Консультация олиш' }}
             </BaseButton>
 
             <p class="flex items-center justify-center gap-2 text-center text-xs font-medium text-muted">
               <AppIcon name="lock" :size="14" />
-              Ma’lumotlaringiz faqat siz bilan bog‘lanish uchun ishlatiladi
+              Маълумотларингиз фақат сиз билан боғланиш учун ишлатилади
             </p>
           </form>
         </div>
@@ -264,12 +264,12 @@ const inputClass = (field) =>
           <AppIcon name="check-circle" :size="36" :stroke-width="2" />
         </div>
         <h3 id="success-title" class="mt-5 text-2xl font-extrabold tracking-[-0.02em] text-navy-800">
-          Rahmat{{ submittedName ? `, ${submittedName}` : '' }}!
+          Раҳмат{{ submittedName ? `, ${submittedName}` : '' }}!
         </h3>
         <p class="mt-3 leading-relaxed text-muted">
-          Arizangiz qabul qilindi. Mutaxassisimiz tez orada siz bilan bog‘lanadi — telefoningiz yoningizda bo‘lsin.
+          Аризангиз қабул қилинди. Малакали мутахассисимиз тез орада сиз билан боғланади — телефонингиз ёнингизда бўлсин.
         </p>
-        <BaseButton class="mt-7" block size="lg" @click="successOpen = false">Yaxshi</BaseButton>
+        <BaseButton class="mt-7" block size="lg" @click="successOpen = false">Яхши</BaseButton>
       </div>
     </BaseModal>
   </section>

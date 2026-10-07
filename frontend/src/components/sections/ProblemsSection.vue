@@ -10,9 +10,9 @@ import { scrollToForm } from '@/composables/useScrollTo'
   <section id="muammolar" class="section bg-white">
     <div class="container-page">
       <SectionHeading
-        eyebrow="Muammolar"
-        title="Sizni ham shu muammolar bezovta qilyaptimi?"
-        text="Teri muammolari ko‘pincha faqat tashqi emas — ular organizm ichidagi jarayonlar, stress va immunitet bilan bog‘liq."
+        eyebrow="Муаммолар"
+        title="Сизни ҳам шу муаммолар безовта қиляптими?"
+        text="Тери муаммолари кўпинча фақат ташқи эмас — улар организм ичидаги жараёнлар, стресс ва иммунитет билан боғлиқ."
       />
 
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
@@ -33,8 +33,8 @@ import { scrollToForm } from '@/composables/useScrollTo'
       </div>
 
       <div v-reveal class="mt-10 flex flex-col items-center gap-3 text-center">
-        <p class="font-semibold text-navy-800">Muammongizni mutaxassisga ayting — sizga mos yo‘lni tushuntiramiz.</p>
-        <BaseButton size="lg" icon="arrow-right" @click="scrollToForm">Konsultatsiya olish</BaseButton>
+        <p class="font-semibold text-navy-800">Муаммонгизни малакали мутахассисга айтинг — сизга мос йўлни тушунтирамиз.</p>
+        <BaseButton size="lg" icon="arrow-right" @click="scrollToForm">Консультация олиш</BaseButton>
       </div>
     </div>
   </section>

@@ -28,8 +28,8 @@ const VALID_CODES = ['20', '33', '50', '55', '61', '62', '65', '66', '67', '69',
 
 export function validatePhone(value) {
   const d = extractDigits(value)
-  if (!d.length) return 'Telefon raqamingizni kiriting'
-  if (d.length < 9) return 'Raqam to‘liq emas: +998 __ ___ __ __'
-  if (!VALID_CODES.includes(d.slice(0, 2))) return 'Operator kodi noto‘g‘ri (masalan: 90, 91, 93, 94, 97, 99, 33, 88)'
+  if (!d.length) return 'Телефон рақамингизни киритинг'
+  if (d.length < 9) return 'Рақам тўлиқ эмас: +998 __ ___ __ __'
+  if (!VALID_CODES.includes(d.slice(0, 2))) return 'Оператор коди нотўғри (масалан: 90, 91, 93, 94, 97, 99, 33, 88)'
   return ''
 }

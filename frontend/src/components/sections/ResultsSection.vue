@@ -12,9 +12,9 @@ import { scrollToForm } from '@/composables/useScrollTo'
     <div class="container-page">
       <SectionHeading
         dark
-        eyebrow="Natijalar"
-        title="Mijozlarimiz natijalari"
-        text="Dermolife kompleksini qo‘llagan mijozlarimizning real fotosuratlari. Taqqoslash uchun chiziqni suring."
+        eyebrow="Натижалар"
+        title="Мижозларимиз натижалари"
+        text="Dermolife комплексини қўллаган мижозларимизнинг реал фотосуратлари. Таққослаш учун чизиқни суринг."
       />
 
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -28,7 +28,7 @@ import { scrollToForm } from '@/composables/useScrollTo'
           <figcaption class="flex items-center justify-between px-2 pt-3 pb-1">
             <span class="font-bold text-white">{{ r.area }}</span>
             <span class="inline-flex items-center gap-1 text-xs font-semibold text-leaf-400">
-              <AppIcon name="chevrons-lr" :size="14" /> suring
+              <AppIcon name="chevrons-lr" :size="14" /> суринг
             </span>
           </figcaption>
         </figure>
@@ -36,11 +36,11 @@ import { scrollToForm } from '@/composables/useScrollTo'
 
       <p v-reveal class="mx-auto mt-8 flex max-w-2xl items-start justify-center gap-2 text-center text-sm text-navy-200">
         <AppIcon name="info" :size="16" class="mt-0.5 shrink-0" />
-        Natijalar har bir organizmda individual bo‘lib, teri holati va qo‘llash muntazamligiga bog‘liq.
+        Натижалар ҳар бир организмда индивидуал бўлиб, тери ҳолати ва қўллаш мунтазамлигига боғлиқ.
       </p>
 
       <div v-reveal class="mt-8 flex justify-center">
-        <BaseButton size="lg" icon="arrow-right" @click="scrollToForm">Men ham natija olmoqchiman</BaseButton>
+        <BaseButton size="lg" icon="arrow-right" @click="scrollToForm">Мен ҳам натижа олмоқчиман</BaseButton>
       </div>
     </div>
   </section>

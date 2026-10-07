@@ -41,7 +41,7 @@ function onPointerUp() {
   >
     <img
       :src="props.after"
-      :alt="`${alt} — keyin`"
+      :alt="`${alt} — кейин`"
       loading="lazy"
       decoding="async"
       width="600"
@@ -51,7 +51,7 @@ function onPointerUp() {
     />
     <img
       :src="props.before"
-      :alt="`${alt} — oldin`"
+      :alt="`${alt} — олдин`"
       loading="lazy"
       decoding="async"
       width="600"
@@ -64,12 +64,12 @@ function onPointerUp() {
     <span
       class="pointer-events-none absolute top-3 left-3 rounded-full bg-navy-900/70 px-3 py-1 text-xs font-bold text-white backdrop-blur"
     >
-      Oldin
+      Олдин
     </span>
     <span
       class="pointer-events-none absolute top-3 right-3 rounded-full bg-leaf-600/90 px-3 py-1 text-xs font-bold text-white backdrop-blur"
     >
-      Keyin
+      Кейин
     </span>
 
     <div class="pointer-events-none absolute inset-y-0 w-0.5 -translate-x-1/2 bg-white shadow" :style="{ left: `${position}%` }">
@@ -87,7 +87,7 @@ function onPointerUp() {
       max="100"
       step="1"
       class="sr-only"
-      :aria-label="`${alt}: oldin va keyin taqqoslash`"
+      :aria-label="`${alt}: олдин ва кейин таққослаш`"
     />
   </div>
 </template>

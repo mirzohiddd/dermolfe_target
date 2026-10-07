@@ -26,15 +26,15 @@ const contactItems = computed(() =>
       <div>
         <img :src="logoWhite" alt="Dermolife Complex" width="334" height="80" loading="lazy" class="h-11 w-auto" />
         <p class="mt-5 max-w-sm leading-relaxed text-navy-200">
-          Sirop, krem va sovundan iborat tabiiy kompleks — terini ichdan va tashqaridan parvarish qiladi.
+          Сироп, крем ва совундан иборат табиий комплекс — терини ичдан ва ташқаридан парвариш қилади.
         </p>
         <BaseButton class="mt-7" variant="light" icon="arrow-right" @click="scrollToForm">
-          Konsultatsiya olish
+          Консультация олиш
         </BaseButton>
       </div>
 
       <div v-if="contactItems.length">
-        <h3 class="text-sm font-bold tracking-[0.14em] text-white uppercase">Aloqa</h3>
+        <h3 class="text-sm font-bold tracking-[0.14em] text-white uppercase">Алоқа</h3>
         <ul class="mt-5 space-y-3">
           <li v-for="item in contactItems" :key="item.icon">
             <component
@@ -55,7 +55,7 @@ const contactItems = computed(() =>
       </div>
       <div v-else class="self-end">
         <p class="max-w-xs leading-relaxed text-navy-200">
-          Savollaringiz bo‘lsa, ariza qoldiring — mutaxassisimiz o‘zi siz bilan bog‘lanadi.
+          Саволларингиз бўлса, ариза қолдиринг — малакали мутахассисимиз ўзи сиз билан боғланади.
         </p>
       </div>
     </div>
@@ -64,9 +64,9 @@ const contactItems = computed(() =>
       <div
         class="container-page flex flex-col gap-2 py-6 pb-28 text-xs leading-relaxed text-navy-200/80 sm:flex-row sm:items-center sm:justify-between sm:pb-6"
       >
-        <p>© {{ year }} {{ site.brand }}. Barcha huquqlar himoyalangan.</p>
+        <p>© {{ year }} {{ site.brand }}. Барча ҳуқуқлар ҳимояланган.</p>
         <p class="max-w-md sm:text-right">
-          Natijalar har bir organizmda individual. Qo‘llashdan oldin mutaxassis bilan maslahatlashing.
+          Натижалар ҳар бир организмда индивидуал. Қўллашдан олдин малакали мутахассис билан маслаҳатлашинг.
         </p>
       </div>
     </div>

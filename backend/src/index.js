@@ -37,7 +37,7 @@ function rateLimit(req, res, next) {
   const windowMs = 10 * 60 * 1000
   const list = (hits.get(req.ip) || []).filter((t) => now - t < windowMs)
   if (list.length >= 5) {
-    return res.status(429).json({ ok: false, message: 'Juda ko‘p urinish. Birozdan so‘ng qayta urinib ko‘ring.' })
+    return res.status(429).json({ ok: false, message: 'Жуда кўп уриниш. Бироздан сўнг қайта уриниб кўринг.' })
   }
   list.push(now)
   hits.set(req.ip, list)
@@ -54,7 +54,7 @@ app.post('/api/leads', express.json({ limit: '10kb' }), rateLimit, async (req, r
 
   if (isBot) return res.json({ ok: true }) // honeypot — botga "muvaffaqiyat" deymiz, lekin saqlamaymiz
   if (!ok) {
-    return res.status(422).json({ ok: false, message: 'Ma’lumotlarni tekshirib, qayta yuboring.', errors })
+    return res.status(422).json({ ok: false, message: 'Маълумотларни текшириб, қайта юборинг.', errors })
   }
 
   // 5 daqiqa ichida shu raqamdan takroriy ariza — qayta yubormaymiz
@@ -73,7 +73,7 @@ app.post('/api/leads', express.json({ limit: '10kb' }), rateLimit, async (req, r
     }
   } catch (err) {
     console.error('[leads] xatolik:', err)
-    if (!res.headersSent) res.status(500).json({ ok: false, message: 'Serverda xatolik. Iltimos, qayta urinib ko‘ring.' })
+    if (!res.headersSent) res.status(500).json({ ok: false, message: 'Серверда хатолик. Илтимос, қайта уриниб кўринг.' })
   }
 })
 

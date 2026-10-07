@@ -35,7 +35,7 @@ export async function submitLead(lead) {
       signal: controller.signal,
     })
   } catch {
-    throw new LeadError('Internet aloqasini tekshirib, qayta urinib ko‘ring.')
+    throw new LeadError('Интернет алоқасини текшириб, қайта уриниб кўринг.')
   } finally {
     clearTimeout(timer)
   }
@@ -48,7 +48,7 @@ export async function submitLead(lead) {
   }
 
   if (!response.ok || !data?.ok) {
-    throw new LeadError(data?.message || 'Arizani yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.')
+    throw new LeadError(data?.message || 'Аризани юборишда хатолик юз берди. Илтимос, қайта уриниб кўринг.')
   }
   return { ok: true }
 }

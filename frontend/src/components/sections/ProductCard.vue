@@ -44,7 +44,7 @@ defineEmits(['toggle'])
         :aria-controls="`ingr-${product.id}`"
         @click="$emit('toggle')"
       >
-        Tarkibi ({{ product.ingredients.length }})
+        Таркиби ({{ product.ingredients.length }})
         <AppIcon name="chevron-down" :size="20" class="transition-transform duration-300" :class="open && 'rotate-180'" />
       </button>
 

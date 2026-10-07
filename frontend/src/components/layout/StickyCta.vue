@@ -47,7 +47,7 @@ onBeforeUnmount(() => observers.forEach((o) => o.disconnect()))
       v-if="visible"
       class="fixed inset-x-0 bottom-0 z-40 border-t border-navy-100/70 bg-white/90 px-4 pt-3 pb-[max(12px,env(safe-area-inset-bottom))] backdrop-blur-lg sm:hidden"
     >
-      <BaseButton block size="lg" icon="arrow-right" @click="scrollToForm">Konsultatsiya olish</BaseButton>
+      <BaseButton block size="lg" icon="arrow-right" @click="scrollToForm">Консультация олиш</BaseButton>
     </div>
   </Transition>
 </template>

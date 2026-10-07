@@ -8,7 +8,7 @@ import AppIcon from '@/components/ui/AppIcon.vue'
 import { scrollToForm, scrollToSection } from '@/composables/useScrollTo'
 import { results } from '@/data/content'
 
-const points = ['Tabiiy tarkib', 'Ichdan va tashqaridan ta’sir', 'Mutaxassis maslahati']
+const points = ['Табиий таркиб', 'Ичдан ва ташқаридан таъсир', 'Малакали мутахассис маслаҳати']
 </script>
 
 <template>
@@ -25,18 +25,18 @@ const points = ['Tabiiy tarkib', 'Ichdan va tashqaridan ta’sir', 'Mutaxassis m
           class="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[13px] font-bold text-navy-700 shadow-[var(--shadow-soft)] ring-1 ring-navy-100"
         >
           <span class="h-2 w-2 rounded-full bg-leaf-500" />
-          Psoriaz · Ekzema · Allergik toshmalar
+          Псориаз · Экзема · Аллергик тошмалар
         </p>
 
         <h1
           class="mt-5 text-[34px] leading-[1.08] font-extrabold tracking-[-0.035em] text-navy-800 text-balance sm:text-5xl lg:text-[58px]"
         >
-          Teringizni <span class="text-leaf-600">ichdan va tashqaridan</span> tabiiy tiklang
+          Терингизни <span class="text-leaf-600">ичдан ва ташқаридан</span> табиий тикланг
         </h1>
 
         <p class="mt-5 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">
-          <strong class="font-bold text-navy-700">Dermolife Complex</strong> — sirop, krem va sovundan iborat tabiiy
-          kompleks. Mutaxassisdan konsultatsiya oling va teringizga mos parvarishni bilib oling.
+          <strong class="font-bold text-navy-700">Dermolife Complex</strong> — сироп, крем ва совундан иборат табиий
+          комплекс. Малакали мутахассисдан консультация олинг ва терингизга мос парваришни билиб олинг.
         </p>
 
         <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2.5">
@@ -49,9 +49,9 @@ const points = ['Tabiiy tarkib', 'Ichdan va tashqaridan ta’sir', 'Mutaxassis m
         </ul>
 
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <BaseButton size="lg" icon="arrow-right" @click="scrollToForm">Konsultatsiya olish</BaseButton>
+          <BaseButton size="lg" icon="arrow-right" @click="scrollToForm">Консультация олиш</BaseButton>
           <BaseButton size="lg" variant="secondary" @click="scrollToSection('natijalar')">
-            Natijalarni ko‘rish
+            Натижаларни кўриш
           </BaseButton>
         </div>
       </div>
@@ -63,7 +63,7 @@ const points = ['Tabiiy tarkib', 'Ichdan va tashqaridan ta’sir', 'Mutaxassis m
         >
           <img
             :src="specialistImg"
-            alt="Dermolife mutaxassisi"
+            alt="Dermolife малакали мутахассиси"
             width="900"
             height="1347"
             fetchpriority="high"
@@ -72,8 +72,8 @@ const points = ['Tabiiy tarkib', 'Ichdan va tashqaridan ta’sir', 'Mutaxassis m
           />
           <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-navy-900/70 to-transparent" />
           <div class="absolute bottom-12 left-4 text-white sm:bottom-14 sm:left-6">
-            <p class="text-xs font-semibold tracking-wider text-leaf-100 uppercase">Shaxsiy konsultatsiya</p>
-            <p class="text-lg font-bold">Dermolife mutaxassisi</p>
+            <p class="text-xs font-semibold tracking-wider text-leaf-100 uppercase">Шахсий консультация</p>
+            <p class="text-lg font-bold">Малакали мутахассис</p>
           </div>
         </div>
 
@@ -93,8 +93,8 @@ const points = ['Tabiiy tarkib', 'Ichdan va tashqaridan ta’sir', 'Mutaxassis m
             />
           </div>
           <div class="leading-tight">
-            <p class="text-sm font-extrabold text-navy-800">3 bosqichli kompleks</p>
-            <p class="text-xs font-medium text-muted">Sirop · Krem · Sovun</p>
+            <p class="text-sm font-extrabold text-navy-800">3 босқичли комплекс</p>
+            <p class="text-xs font-medium text-muted">Сироп · Крем · Совун</p>
           </div>
         </div>
 
@@ -108,8 +108,8 @@ const points = ['Tabiiy tarkib', 'Ichdan va tashqaridan ta’sir', 'Mutaxassis m
             <AppIcon name="sparkles" :size="18" />
           </span>
           <span class="text-left leading-tight">
-            <span class="block text-sm font-extrabold text-navy-800">{{ results.length }} ta real natija</span>
-            <span class="block text-xs font-medium text-muted">oldin / keyin</span>
+            <span class="block text-sm font-extrabold text-navy-800">{{ results.length }} та реал натижа</span>
+            <span class="block text-xs font-medium text-muted">олдин / кейин</span>
           </span>
         </button>
       </div>

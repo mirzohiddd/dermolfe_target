@@ -11,15 +11,15 @@ const photos = { specialist: specialistImg }
 
 /** Konsultatsiya jarayoni — mutaxassis bilan suhbatda nima bo'ladi */
 const consultation = [
-  'Teringizdagi muammoni batafsil o‘rganadi',
-  'Dermolife kompleksini qanday qo‘llashni tushuntiradi',
-  'Parvarish davomida savollaringizga javob beradi',
+  'Терингиздаги муаммони батафсил ўрганади',
+  'Dermolife комплексини қандай қўллашни тушунтиради',
+  'Парвариш давомида саволларингизга жавоб беради',
 ]
 
 const specialists = computed(() =>
   site.specialists.map((s) => ({
     ...s,
-    displayName: s.name || 'Dermolife mutaxassisi',
+    displayName: s.name || 'Dermolife малакали мутахассиси',
     photo: photos[s.photoKey],
     points: s.facts?.length ? s.facts : consultation,
   })),
@@ -31,9 +31,9 @@ const single = computed(() => specialists.value.length === 1)
   <section id="mutaxassis" class="section bg-white">
     <div class="container-page">
       <SectionHeading
-        eyebrow="Mutaxassislar"
-        :title="single ? 'Sizga malakali mutaxassis maslahat beradi' : 'Sizga malakali mutaxassislarimiz maslahat beradi'"
-        text="Ariza qoldirganingizdan so‘ng mutaxassis siz bilan bog‘lanadi va muammongiz bo‘yicha konsultatsiya beradi."
+        eyebrow="Мутахассислар"
+        :title="single ? 'Сизга малакали мутахассис маслаҳат беради' : 'Сизга малакали мутахассисларимиз маслаҳат беради'"
+        text="Ариза қолдирганингиздан сўнг малакали мутахассис сиз билан боғланади ва муаммонгиз бўйича консультация беради."
       />
 
       <div :class="single ? '' : 'grid gap-6 sm:grid-cols-2 lg:grid-cols-3'">
@@ -59,7 +59,7 @@ const single = computed(() => specialists.value.length === 1)
           <div class="flex flex-col justify-center p-6 sm:p-8 lg:p-12">
             <p class="inline-flex w-fit items-center gap-2 rounded-full bg-leaf-50 px-3 py-1 text-xs font-bold text-leaf-700">
               <AppIcon name="user-check" :size="15" />
-              Dermolife jamoasi
+              Dermolife жамоаси
             </p>
             <h3 class="mt-4 text-2xl font-extrabold tracking-[-0.02em] text-navy-800 sm:text-3xl">{{ s.displayName }}</h3>
             <p v-if="s.role" class="mt-1 font-semibold text-leaf-600">{{ s.role }}</p>
@@ -74,7 +74,7 @@ const single = computed(() => specialists.value.length === 1)
             </ul>
 
             <BaseButton class="mt-8 w-full sm:w-fit" size="lg" icon="arrow-right" @click="scrollToForm">
-              Konsultatsiya olish
+              Консультация олиш
             </BaseButton>
           </div>
         </article>

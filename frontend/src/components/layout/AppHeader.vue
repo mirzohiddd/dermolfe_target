@@ -7,10 +7,10 @@ import { site, phoneHref } from '@/config/site'
 import { scrollToForm, scrollToSection } from '@/composables/useScrollTo'
 
 const links = [
-  { id: 'muammolar', label: 'Muammolar' },
+  { id: 'muammolar', label: 'Муаммолар' },
   { id: 'dermolife', label: 'Dermolife' },
-  { id: 'natijalar', label: 'Natijalar' },
-  { id: 'mutaxassis', label: 'Mutaxassis' },
+  { id: 'natijalar', label: 'Натижалар' },
+  { id: 'mutaxassis', label: 'Мутахассис' },
 ]
 
 const scrolled = ref(false)
@@ -28,11 +28,11 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
     :class="scrolled ? 'bg-white/85 shadow-[0_1px_0_rgb(0_33_63/0.06)] backdrop-blur-lg' : 'bg-transparent'"
   >
     <div class="container-page flex h-16 items-center justify-between gap-4 sm:h-[72px]">
-      <a href="#" class="shrink-0" aria-label="Dermolife Complex — bosh sahifa" @click.prevent="scrollToSection('top')">
+      <a href="#" class="shrink-0" aria-label="Dermolife Complex — бош саҳифа" @click.prevent="scrollToSection('top')">
         <img :src="logo" alt="Dermolife Complex" width="334" height="80" class="h-8 w-auto min-[400px]:h-9 sm:h-10" />
       </a>
 
-      <nav class="hidden items-center gap-1 lg:flex" aria-label="Asosiy menyu">
+      <nav class="hidden items-center gap-1 lg:flex" aria-label="Асосий меню">
         <a
           v-for="link in links"
           :key="link.id"
@@ -49,13 +49,13 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
           v-if="site.contacts.phone"
           :href="phoneHref(site.contacts.phone)"
           class="inline-flex items-center gap-1.5 rounded-xl bg-navy-50 px-2.5 py-2 text-[13px] font-bold whitespace-nowrap text-navy-800 transition hover:bg-navy-100 sm:gap-2 sm:bg-transparent sm:px-3 sm:text-[15px] sm:hover:bg-navy-50"
-          title="Qo‘ng‘iroq qilish"
+          title="Қўнғироқ қилиш"
         >
           <AppIcon name="phone" :size="17" class="shrink-0 text-leaf-600" />
           {{ site.contacts.phone }}
         </a>
         <div class="hidden sm:block">
-          <BaseButton @click="scrollToForm">Konsultatsiya olish</BaseButton>
+          <BaseButton @click="scrollToForm">Консультация олиш</BaseButton>
         </div>
       </div>
     </div>

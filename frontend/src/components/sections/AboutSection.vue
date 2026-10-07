@@ -6,9 +6,9 @@ import ProductCard from '@/components/sections/ProductCard.vue'
 import { products } from '@/data/content'
 
 const steps = [
-  { icon: 'heart', title: 'Ichdan', text: 'Sirop organizmni tozalaydi, asab va immunitetni qo‘llab-quvvatlaydi.' },
-  { icon: 'leaf', title: 'Tashqaridan', text: 'Krem terini tinchlantiradi, namlaydi va tiklanishni faollashtiradi.' },
-  { icon: 'shield', title: 'Har kuni', text: 'Sovun terini yumshoq tozalaydi va himoya pardasini saqlaydi.' },
+  { icon: 'heart', title: 'Ичдан', text: 'Сироп организмни тозалайди, асаб ва иммунитетни қўллаб-қувватлайди.' },
+  { icon: 'leaf', title: 'Ташқаридан', text: 'Крем терини тинчлантиради, намлайди ва тикланишни фаоллаштиради.' },
+  { icon: 'shield', title: 'Ҳар куни', text: 'Совун терини юмшоқ тозалайди ва ҳимоя пардасини сақлайди.' },
 ]
 
 const openId = ref(products[0].id)
@@ -18,9 +18,9 @@ const openId = ref(products[0].id)
   <section id="dermolife" class="section">
     <div class="container-page">
       <SectionHeading
-        eyebrow="Dermolife nima?"
-        title="Teri uchun 3 bosqichli tabiiy kompleks"
-        text="Dermolife Complex — terini faqat ustidan emas, balki ichdan ham parvarish qiladigan yondashuv. Bunday kompleks nafaqat terini, balki butun organizmni uyg‘oq va sog‘lom holatga keltirishga yordam beradi."
+        eyebrow="Dermolife нима?"
+        title="Тери учун 3 босқичли табиий комплекс"
+        text="Dermolife Complex — терини фақат устидан эмас, балки ичдан ҳам парвариш қиладиган ёндашув. Бундай комплекс нафақат терини, балки бутун организмни уйғоқ ва соғлом ҳолатга келтиришга ёрдам беради."
       />
 
       <!-- qanday yechim beradi -->
